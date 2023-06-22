@@ -1,0 +1,19 @@
+soil moisture sensor
+--------------------
+pi@acngroup5pi /var/www $ ls -l /dev/ttyACM0
+crw-rw---T 1 root dialout 166, 0 Mar 31 02:23 /dev/ttyACM0
+
+>usermod -a -G dialout www-data
+http://www.fritz-hut.com/2012/08/30/php-serialclass-with-arduino-raspberrypi/
+
+
+-installed minicom
+>sudo apt-get install minicom
+-Now run up minicom on the Raspberry Pi using
+>minicom -b 9600 -o -D /dev/ttyAMA0 
+http://www.hobbytronics.co.uk/raspberry-pi-serial-port
+
+>sudo stty -F /dev/ttyACM0 cs8 9600 ignbrk -brkint -icrnl -imaxbel -opost -onlcr -isig -icanon -iexten -echo -echoe -echok -echoctl -echoke noflsh -ixon -crtscts
+
+php serial class not implemented for windows.
+php serial class requires sleep(2) atleast, after deviceOpen to get values in php.
